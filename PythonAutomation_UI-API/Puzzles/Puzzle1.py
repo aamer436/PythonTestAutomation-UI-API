@@ -5,12 +5,12 @@ from collections import Counter
 
 def get_rev_string(input):
     # Approach 1
-    '''
+
     reverse_string=''
     for char in input:
         reverse_string=char+reverse_string
     print(reverse_string)
-    '''
+
 
     # Approach 2
     # print(input[::-1])
@@ -345,8 +345,50 @@ def reverse_substrings(input_string):
     # Step 3: Join all parts together to get the final output
     return ''.join(parts)
 
+def count_occurence_of_characters():
+    input='sdfjjhjhjkdsf';
+    counter = {}
+    for i in input:
+        if i not in counter.keys():
+            counter[i]=1
+        else:
+            counter[i]=counter[i]+1
+    print(counter)
 
+def shift_even_odd():
+    a=[12,45,6,67,44,56,100,56,78,89,34,12,33]
+    for j in range(len(a)-1):
+        for i in range(j,len(a)-1):
+            if a[i]%2!=0:
+                temp=a[i]
+                a[i]=a[i+1]
+                a[i+1]=temp
+    print(a)
 
+def shifting_positions():
+    a=123456 #output = 623451
+    l=[]
+    while(a>0):
+        l.append(a%10)
+        a=a//10
+    print(l)
+    m=sorted(l,reverse=False)
+    print(m)
+    temp=m[0]
+    m[0]=m[len(m)-1]
+    m[(len(m)-1)]=temp
+    print(m)
+    result=0
+    for i in m:
+        result=(result+i)*10
+    print(result//10)
+
+def stringFunctions():
+    input="asifsjidjjinini"
+    output=input.replace("ini","abc00")
+    print(output)
+
+get_rev_string("value")
 demonstrate_try_catch(10, 2)  # valid
 demonstrate_try_catch(10, 0)  # div by zero
 demonstrate_try_catch(10, 'b')  # invalid input
@@ -355,3 +397,7 @@ find_second_highest_element_in_sentence()
 find_common_elements_in_two_lists()
 swap_without_third_variable()
 extract_vowels_consonants()
+count_occurence_of_characters()
+shift_even_odd()
+shifting_positions()
+stringFunctions()
